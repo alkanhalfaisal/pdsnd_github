@@ -96,14 +96,14 @@ def time_stats(df):
     # TO DO: display the most common month
     #mcm => most common month
     mcm = df['month'].mode()[0]
-    print('The most common month is '+str(mcm))
+    print('The most common month is {}'.format(mcm))
 
     # TO DO: display the most common day of week
     mcd = df['day_of_week'].mode()[0]
-    print('The most common day is '+str(mcd))
+    print('The most common day is {}'.format(mcd))
     # TO DO: display the most common start hour
     mcs=df['Start Time'].dt.hour.mode()[0]
-    print('The most common start hour is '+str(mcs))
+    print('The most common start hour is {}'.format(mcs))
     
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -117,17 +117,17 @@ def station_stats(df):
 
     # TO DO: display most commonly used start station
     mcus=df['Start Station'].mode()[0]
-    print('The most commonly used start station is '+str(mcus))
+    print('The most commonly used start station is {}'.format(mcus))
     
     # TO DO: display most commonly used end station
     mcues=df['End Station'].mode()[0]
-    print('The most commonly used end Station is '+str(mcues))
+    print('The most commonly used end Station is {}'.format(mcues))
 
     # TO DO: display most frequent combination of start station and end station trip
     df['combination'] = df['Start Station']+df['End Station']
     
     most_combination = df['combination'].mode()[0]
-    print('The most frequent combination of start station and end station trip is '+str(most_combination))
+    print('The most frequent combination of start station and end station trip is {}'.format(most_combination))
     
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -142,11 +142,11 @@ def trip_duration_stats(df):
 
     # TO DO: display total travel time
     total_travel = df['Trip Duration'].sum()
-    print('total travel time '+str(total_travel))
+    print('total travel time {}'.format(total_travel))
 
     # TO DO: display mean travel time
     mean = df['Trip Duration'].mean()
-    print('mean travel time '+str(mean))
+    print('mean travel time {}'.format(mean))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -174,7 +174,7 @@ def user_stats(df):
         most_recent = df['Birth Year'].max()
     #mcyofb =>>> most common year of birth
         mcyofb = df['Birth Year'].mode()[0]
-        print('\nEarliest: '+str(earliest)+' most_recent '+str(most_recent)+' most common year of birth '+str(mcyofb))
+        print('\nEarliest: {} most_recent {} most common year of birth {}'.format(earliest,most_recent,mcyofb))
     except:
         print('There is no Gender and Birth Year for washington')
 
